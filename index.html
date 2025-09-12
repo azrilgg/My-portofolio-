@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Ahmad Azriel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .nav-dot {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: #667eea;
+            transform: scale(1.2);
+        }
+        
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">AHAZ</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-blue-400 transition-colors">Beranda</a>
+                    <a href="#about" class="nav-link hover:text-blue-400 transition-colors">Tentang</a>
+                    <a href="#skills" class="nav-link hover:text-blue-400 transition-colors">Keahlian</a>
+                    <a href="#projects" class="nav-link hover:text-blue-400 transition-colors">Proyek</a>
+                    <a href="#contact" class="nav-link hover:text-blue-400 transition-colors">Kontak</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Navigation Dots -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+        <div class="flex flex-col space-y-4">
+            <div class="nav-dot w-3 h-3 rounded-full bg-gray-600 cursor-pointer" data-section="home"></div>
+            <div class="nav-dot w-3 h-3 rounded-full bg-gray-600 cursor-pointer" data-section="about"></div>
+            <div class="nav-dot w-3 h-3 rounded-full bg-gray-600 cursor-pointer" data-section="skills"></div>
+            <div class="nav-dot w-3 h-3 rounded-full bg-gray-600 cursor-pointer" data-section="projects"></div>
+            <div class="nav-dot w-3 h-3 rounded-full bg-gray-600 cursor-pointer" data-section="contact"></div>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="section gradient-bg relative">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 floating-animation"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 floating-animation" style="animation-delay: -3s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                        Halo, Saya
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                            AHMAD AZRIEL 
+                        </span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-200">
+                        Full Stack Developer & UI/UX Designer
+                    </p>
+                    <p class="text-lg mb-8 text-gray-300 leading-relaxed">
+                        Saya menciptakan pengalaman digital yang menakjubkan dengan menggabungkan kreativitas dan teknologi terdepan.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('projects')" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                            Lihat Karya Saya
+                        </button>
+                        <button onclick="scrollToSection('contact')" class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                            Hubungi Saya
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-80 h-80 mx-auto relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 floating-animation"></div>
+                        <div class="absolute inset-4 glass-effect rounded-full overflow-hidden flex items-center justify-center">
+    <img src="https://uploads.onecompiler.io/43v86p8fq/43v86tzg7/1000218640.jpg" 
+         alt="Foto Saya" 
+         class="w-full h-full object-cover rounded-full" />
+</div>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-8">Tentang Saya</h2>
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        Dengan pengalaman 1 tahun saya di bidang pengembangan web dan desain, saya telah membantu berbagai perusahaan menciptakan solusi digital yang inovatif dan user-friendly.
+                    </p>
+                    <p class="text-lg mb-8 text-gray-300 leading-relaxed">
+                        Saya percaya bahwa teknologi terbaik adalah yang tidak terlihat - yang bekerja dengan mulus dan memberikan pengalaman yang luar biasa bagi pengguna.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">5</div>
+                            <div class="text-gray-400">Proyek Selesai</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-400 mb-2">2</div>
+                            <div class="text-gray-400">Klien Puas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400 mb-2">1</div>
+                            <div class="text-gray-400">Tahun Pengalaman</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-400 mb-2">15+</div>
+                            <div class="text-gray-400">Teknologi Dikuasai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="glass-effect rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Filosofi Kerja</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">User-Centric Design</h4>
+                                    <p class="text-gray-300 text-sm">Setiap keputusan desain dimulai dari kebutuhan pengguna</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Clean Code</h4>
+                                    <p class="text-gray-300 text-sm">Kode yang bersih, maintainable, dan scalable</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Continuous Learning</h4>
+                                    <p class="text-gray-300 text-sm">Selalu mengikuti perkembangan teknologi terbaru</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Keahlian Saya</h2>
+                <p class="text-xl text-gray-300">Teknologi dan tools yang saya kuasai</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Frontend Development</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">React.js</span>
+                                <span class="text-blue-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Vue.js</span>
+                                <span class="text-green-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">TypeScript</span>
+                                <span class="text-blue-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Tailwind CSS</span>
+                                <span class="text-cyan-400">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-cyan-400 to-cyan-600 h-2 rounded-full" style="width: 0%" data-width="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Backend Development</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Node.js</span>
+                                <span class="text-green-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Python</span>
+                                <span class="text-yellow-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-2 rounded-full" style="width: 0%" data-width="82%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">PostgreSQL</span>
+                                <span class="text-blue-400">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">MongoDB</span>
+                                <span class="text-green-400">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">Tools & Technologies</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="glass-effect rounded-xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2">⚛️</div>
+                        <div class="font-semibold">Gemini Ai</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2">⚪</div>
+                        <div class="font-semibold">ChatGpt</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2">🐍</div>
+                        <div class="font-semibold">Python</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2">⚫</div>
+                        <div class="font-semibold">Blackbox Ai</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2">😽</div>
+                        <div class="font-semibold">Github</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2">💙</div>
+                        <div class="font-semibold">Canva</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="section bg-gray-800">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6">Proyek Terbaru</h2>
+      <p class="text-xl text-gray-300">Karyaku yang sudah ku buat dan sedang berjalan</p>
+    </div>
+
+    <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
+      <div class="project-card glass-effect rounded-2xl overflow-hidden">
+        <div class="h-48 bg-cover bg-center flex items-center justify-center" 
+     style="background-image: url('https://uploads.onecompiler.io/43v86p8fq/43wgydqez/1000068603.jpg');">
+</div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-3">Website Favorit Lagu</h3>
+          <p class="text-gray-300 mb-4">
+            Website berisi koleksi musik favorit saya dengan tampilan yang simple dan menarik.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-600 text-xs px-2 py-1 rounded">HTML</span>
+            <span class="bg-green-600 text-xs px-2 py-1 rounded">CSS</span>
+            <span class="bg-purple-600 text-xs px-2 py-1 rounded">JavaScript</span>
+          </div>
+          <div class="flex space-x-4">
+            <a href="https://azrilgg.github.io/Azriel-fav-music/" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">Live Demo</a>
+            <a href="https://github.com/azrilgg/Azriel-fav-music" target="_blank" class="text-gray-400 hover:text-gray-300 transition-colors">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="section gradient-bg relative">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-40 right-40 w-60 h-60 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-50 floating-animation"></div>
+            <div class="absolute bottom-40 left-40 w-60 h-60 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-50 floating-animation" style="animation-delay: -3s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Mari Berkolaborasi</h2>
+                <p class="text-xl text-gray-200">Punya proyek menarik? Mari diskusikan!</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Hubungi Saya</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-gray-200">azrilpribadi135@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Telepon</div>
+                                <div class="text-gray-200">+62 852-8072-1275</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Lokasi</div>
+                                <div class="text-gray-200">Pabuaran, Indonesia</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Ikuti Saya</h4>
+                        <div class="flex space-x-4">
+                            <button class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </button>
+                            <button class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </button>
+                            <button class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-2xl p-8">
+                    <form id="contact-form">
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Nama</label>
+                            <input type="text" class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors" placeholder="Nama Anda">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors" placeholder="email@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Subjek</label>
+                            <input type="text" class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors" placeholder="Subjek pesan">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Pesan</label>
+                            <textarea rows="4" class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors resize-none" placeholder="Tulis pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-gray-900 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2025 Ahmad Azriel. Dibuat dengan ❤️ menggunakan teknologi modern.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navigation dots functionality
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                scrollToSection(section);
+            });
+        });
+
+        // Update active navigation dot on scroll
+        window.addEventListener('scroll', function() {
+            const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const dot = document.querySelector(`[data-section="${section}"]`);
+                if (element && dot) {
+                    const offsetTop = element.offsetTop;
+                    const height = element.offsetHeight;
+                    
+                    if (scrollPos >= offsetTop && scrollPos < offsetTop + height) {
+                        document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
+                        dot.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Animate skill bars when in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.hidden.md\\:flex');
+        
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('flex');
+                navLinks.classList.toggle('flex-col');
+                navLinks.classList.toggle('absolute');
+                navLinks.classList.toggle('top-full');
+                navLinks.classList.toggle('left-0');
+                navLinks.classList.toggle('right-0');
+                navLinks.classList.toggle('bg-gray-900');
+                navLinks.classList.toggle('p-4');
+            });
+        }
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const subject = this.querySelectorAll('input[type="text"]')[1].value;
+            const message = this.querySelector('textarea').value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Mohon lengkapi semua field!');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Mengirim...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Initialize active nav dot
+        document.querySelector('[data-section="home"]').classList.add('active');
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e094fad69b9d6f',t:'MTc1NzY5MjQ1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
+                
+                        
